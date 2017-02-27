@@ -58,6 +58,6 @@ Now just run the cities query first then the population query.
 Note: You will get duplicate errors if you used the CityPopulation table as is. I manually removed them.
 ## Extra info:
 The script handles escaping apostrophes but not SQL injection.
-It can be modified to interface directly to a database just make sure you consider SQL Injetion.
+It can be modified to interface directly to a database just make sure you consider SQL Injection.
 ## Licence
 This project is licensed under the terms of the MIT license.
