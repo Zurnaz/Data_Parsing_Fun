@@ -60,8 +60,8 @@ def generate_inserts():
 	cities_text_file = open("OutputCities.txt", "w")
 	population_text_file = open("OutputPopulation.txt", "w")
 
-	cities_sql = '''INSERT INTO cities(id, city, OtherName, country, latitude, longitude) VALUES ( {}, {}, {}, {}, {}, {})'''
-	population_sql = '''INSERT INTO CityPopulation(city_id, year, population, certainty) VALUES ( {}, {}, {}, {})'''
+	cities_sql = '''INSERT INTO Cities(CityId, CityName, OtherName, Country, Latitude, Longitude) VALUES ( {}, {}, {}, {}, {}, {})'''
+	population_sql = '''INSERT INTO CityPopulation(CityId, Year, Population, Certainty) VALUES ( {}, {}, {}, {})'''
 
 	dup_columns = [0,2]
 	duplicates = get_csv_duplicates(FILENAME, *dup_columns)

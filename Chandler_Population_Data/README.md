@@ -13,24 +13,24 @@ Create two tables in your database.
 I use these, be warned there were duplicate year|city combos, if you do not care you can remove the uq_CityPopulation constraint line.
 Note: The python script handles duplicate cities fine but you loose the other names values from the duplicate cities.
 ```
-CREATE TABLE Cities(
-	ID INT NOT NULL,
-	city VARCHAR(100) NOT NULL,
+CREATE TABLE  Cities(
+	CityId INT NOT NULL,
+	CityName VARCHAR(100) NOT NULL,
 	OtherName VARCHAR(1000),
-	country VARCHAR(100),
+	Country VARCHAR(100),
 	Latitude DECIMAL,
 	Longitude DECIMAL,
-	CONSTRAINT cities_pk PRIMARY KEY (ID),
-	CONSTRAINT city_u UNIQUE (city,country)
+	CONSTRAINT cities_pk PRIMARY KEY (CityId),
+	CONSTRAINT city_u UNIQUE (CityName,Country)
 );
 
 CREATE TABLE CityPopulation (
-	city_id INT NOT NULL,
-	year SMALLINT NOT NULL,
-	population INT NOT NULL,
-	certainty TINYINT,
-	CONSTRAINT uq_CityPopulation UNIQUE (city_id, year),
-	CONSTRAINT fk_cities  FOREIGN KEY (city_id)  REFERENCES Cities(id)
+	CityId INT NOT NULL,
+	Year SMALLINT NOT NULL,
+	Population INT NOT NULL,
+	Certainty TINYINT,
+	CONSTRAINT uq_CityPopulation UNIQUE (CityId, year),
+	CONSTRAINT fk_cities  FOREIGN KEY (CityId)  REFERENCES Cities(CityId)
 );
 ```
 ### Build and run the queries

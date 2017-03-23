@@ -1,3 +1,8 @@
+# Foreign_Office_Consular_Data
+Foreign_Office_Consular_Data/*.sqlite
+Foreign_Office_Consular_Data/*/
+Foreign_Office_Consular_Data/*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
